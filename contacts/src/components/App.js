@@ -7,17 +7,17 @@ import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
 import ContactDetail from "./ContactDetail";
-
+import users from "../api/initial"
 
 function App() {
 
   
 
   const LOCAL_STORAGE_KEY = "contacts";
-  var [contacts, setContacts] = useState([]);
+  var [contacts, setContacts] = useState(users);
   
   const retriveContacts= async()=>{
-    const response =await api.get("/contacts");
+    const response =await api.get("/initial");
     return response.data;
   };
 
